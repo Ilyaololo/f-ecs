@@ -1,0 +1,41 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": ["off"],
+    "@typescript-eslint/explicit-member-accessibility": ["off"],
+    "@typescript-eslint/indent": ["off"],
+    "@typescript-eslint/interface-name-prefix": ["off"],
+    "@typescript-eslint/no-empty-interface": ["off"],
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "@typescript-eslint/no-non-null-assertion": ["off"],
+    "@typescript-eslint/no-parameter-properties": ["off"],
+    "arrow-body-style": ["off"],
+    "class-methods-use-this": ["off"],
+    "consistent-return": ["off"],
+    "import/no-extraneous-dependencies": ["off"],
+    "import/prefer-default-export": ["off"],
+    "indent": ["error", 2],
+    "max-len": ["error", { "code": 120 }],
+    "no-console": ["error", { "allow": ["error", "warn"] }],
+    "no-empty-function": ["off"],
+    "no-param-reassign": ["off"],
+    "no-restricted-syntax": ["off"],
+    "no-underscore-dangle": ["off"],
+    "no-useless-constructor": ["off"],
+    "object-curly-newline": ["off"]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".ts"]
+      }
+    }
+  }
+}
