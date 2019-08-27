@@ -6,7 +6,8 @@ export * from './entity/EntityList';
 export * from './event/constants';
 export * from './event/EventEmitter';
 
-export * from './fsm/StateMachine';
+export * from './fsm/EngineStateMachine';
+export * from './fsm/EntityStateMachine';
 
 export * from './node/Node';
 export * from './node/NodeList';

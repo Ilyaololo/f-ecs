@@ -39,10 +39,16 @@ export class Entity extends EventEmitter implements IEntity {
     this.components = new Map();
   }
 
+  /**
+   * Entity display name.
+   */
   public get displayName(): string {
     return this.name;
   }
 
+  /**
+   * Entity display name.
+   */
   public set displayName(val: string) {
     if (this.name !== val) {
       const previous = this.name;
@@ -53,6 +59,9 @@ export class Entity extends EventEmitter implements IEntity {
     }
   }
 
+  /**
+   * Override object prototype method toString.
+   */
   public toString(): string {
     return this.name;
   }

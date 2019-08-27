@@ -14,9 +14,7 @@
 .DS_Store
 .env
 
-/.rts2_cache_es
-/.rts2_cache_cjs
-/.rts2_cache_umd
+/.rts2_cach*
 
 /package-lock.json
 npm-debug.log*

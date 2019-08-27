@@ -28,7 +28,8 @@
     "no-restricted-syntax": ["off"],
     "no-underscore-dangle": ["off"],
     "no-useless-constructor": ["off"],
-    "object-curly-newline": ["off"]
+    "object-curly-newline": ["off"],
+    "prefer-destructuring": ["off"]
   },
   "settings": {
     "import/resolver": {

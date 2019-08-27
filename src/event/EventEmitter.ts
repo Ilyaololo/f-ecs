@@ -6,28 +6,39 @@ import { Descriptor } from '../utils/descriptors';
 export type Handler = (...args: any[]) => void;
 
 export interface IEventEmitter {
+  /**
+   * Emit a new event with name "type"
+   */
   emit(type: string, ...args: any[]): void;
+
+  /**
+   * Unsubscribe from the event and removing of the handler.
+   */
   off(type: string, listener: Handler): this;
+
+  /**
+   * Subscribing to events named `type`.
+   */
   on(type: string, listener: Handler): this;
+
+  /**
+   * Subscribing to events named `type` and unsubscribe from it after the first call.
+   */
   once(type: string, listener: Handler): this;
 }
 
 @Bind()
 @Injectable()
 export class EventEmitter implements IEventEmitter {
-  // @Descriptor({
-  //   enumerable: false,
-  // })
   private readonly listener: Map<string, Handler[]> = new Map();
 
+  /**
+   * Emit a new event with name `type`
+   */
   @Descriptor({
     enumerable: false,
   })
   public emit(type: string, ...args: any[]): void {
-    // console.groupCollapsed(type);
-    // console.log(...args);
-    // console.groupEnd();
-
     if (!this.listener.has(type)) {
       return;
     }
@@ -42,6 +53,9 @@ export class EventEmitter implements IEventEmitter {
     });
   }
 
+  /**
+   * Unsubscribe from an event named `type`.
+   */
   @Descriptor({
     enumerable: false,
   })
@@ -62,6 +76,9 @@ export class EventEmitter implements IEventEmitter {
     return this;
   }
 
+  /**
+   * Subscribing to events named `type`.
+   */
   @Descriptor({
     enumerable: false,
   })
@@ -81,6 +98,9 @@ export class EventEmitter implements IEventEmitter {
     return this;
   }
 
+  /**
+   * Subscribing to events named `type` and unsubscribe from it after the first call.
+   */
   @Descriptor({
     enumerable: false,
   })
